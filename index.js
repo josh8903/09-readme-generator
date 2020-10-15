@@ -70,33 +70,31 @@ function renderLicenseBadge(license) {
     if (license !== "None") {
         return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
     }
-    return ''
+    return ""
 }
 
 function renderLicenseLink(license) {
     if (license !== "None") {
         return (
-            `\n* [License](#license)\n`
+            `* [License](#license)`
         )
     }
-    return ''
+    return ""
 }
 
 function renderLicenseSection(license) {
     if (license !== "None") {
         return (
-            `## License
-  
-  This project is licensed via ${license}`
+            `## License\nThis project is licensed via ${license}`
         )
     }
-    return ''
+    return ""
 }
 
 // function to generate markdown for README
 function generateMarkdown(data) {
-    return `
-# ${data.title}
+    return (
+        `# ${data.title}
 ${renderLicenseBadge(data.license)}
 ## Description
 ${data.description}
@@ -118,8 +116,8 @@ ${data.contribution}
 ${data.test}
 ## Questions
 If you have any questions, please feel free to [e-mail](mailto:${data.email}) me!        
-Check out my [GitHub](https://github.com/${data.username}/) to see more of my work!
-    `;
+Check out my [GitHub](https://github.com/${data.username}) to see more of my work!`
+    );
 }
 
 // function call to initialize program
